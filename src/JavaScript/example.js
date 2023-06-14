@@ -1,6 +1,6 @@
 const key = require('./key').key;
 
-const url = `https://api.themoviedb.org/3/movie/${id}?api_key=${key}`;
+const url = `https://api.themoviedb.org/3/movie/430?api_key=${key}`;
 
 (async () => {
   const response = await fetch(url);
