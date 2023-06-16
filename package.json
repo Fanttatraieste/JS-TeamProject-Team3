@@ -1,10 +1,10 @@
 {
-  "name": "JS-TeamProject-Team3",
+  "name": "js-teamproject-team3",
   "version": "1.0.0",
-  "description": "",
+  "description": "This project was created with Parcel. For familiarization and setting additional features [refer to documentation](https://parceljs.org/).",
   "homepage": "https://fanttatraieste.github.io/JS-TeamProject-Team3/",
   "scripts": {
-    "start": "parcel src/*.html",
+    "start ": "parcel src/*.html ",
     "build": "parcel build src/*.html --public-url /JS-TeamProject-Team3/"
   },
   "repository": {
@@ -20,11 +20,12 @@
   "dependencies": {
     "modern-normalize": "~2.0.0"
   },
+  "browserslist": "> 0.5%, last 2 versions, not dead",
+  "main": "index.js",
   "devDependencies": {
     "@parcel/transformer-sass": "~2.9.2",
     "parcel": "~2.9.2",
     "parcel-reporter-clean-dist": "~1.0.4",
     "posthtml-include": "~1.7.4"
-  },
-  "browserslist": "> 0.5%, last 2 versions, not dead"
+  }
 }
