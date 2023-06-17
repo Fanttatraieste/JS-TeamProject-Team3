@@ -1,3 +1,17 @@
 @import './common';
 @import './example';
 @import './header';
+@import './body';
+
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}

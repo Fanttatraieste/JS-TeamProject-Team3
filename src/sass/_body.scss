@@ -1,0 +1,47 @@
+//  Body style
+
+.movies__container {
+  display: flex;
+  margin-top: 32px;
+  margin-bottom: 60px;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 1416px;
+  margin-left: auto;
+  margin-right: auto;
+  gap: 16px;
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 16px;
+    //border: 1px solid red;
+    gap: 12px;
+  }
+
+  &__image {
+    width: 395px;
+    height: 574px;
+    object-fit: cover;
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.2;
+    text-transform: uppercase;
+    color: #212121;
+  }
+
+  &__genre {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.2;
+    color: rgba(185, 47, 44, 1);
+  }
+}
