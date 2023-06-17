@@ -1,3 +1,6 @@
 const renderPages = require('./JavaScript/body');
+const blabla = require('./JavaScript/number'); //doar numele functiei
 
-renderPages(5);
+blabla(); //se apeleaza functia
+
+//renderPages(5);

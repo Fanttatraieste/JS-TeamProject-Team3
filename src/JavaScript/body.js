@@ -14,7 +14,8 @@ module.exports = page => {
   });
 
   function renderPage(movieList) {
-    const movieContainer = document.querySelector('.movies__container');
+    let movieContainer = document.querySelector('.movies__container');
+    movieContainer.innerHTML = '';
     movieList.forEach(e => {
       const htmlElement = createElementProstule(e);
       movieContainer.appendChild(htmlElement);
