@@ -22,6 +22,8 @@ module.exports = page => {
 
       htmlElement.addEventListener('click', event => {
         modal(movie);
+        console.log('------   Obiect Vlad    ------');
+        console.log(movie);
       });
 
       movieContainer.appendChild(htmlElement);

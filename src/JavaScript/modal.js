@@ -27,5 +27,7 @@ module.exports = movie => {
   origTitle.innerHTML = movie.original_title;
   about.innerHTML = movie.overview;
   image.src = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
-  filmTitle = movie.title;
+  filmTitle.innerHTML = movie.title;
+  console.log(filmTitle);
+  console.log(movie.title);
 };

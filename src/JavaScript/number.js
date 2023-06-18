@@ -29,16 +29,18 @@ module.exports = () => {
         numbersDiv.appendChild(numberDiv);
 
         numberDiv.addEventListener('click', () => {
-          //   deleteRed();
+          deleteRed();
 
           currentPage = numberDiv.id;
           currentHtmlElement = document.getElementById(`${currentPage}`);
           renderPages(currentPage);
           //numbersDiv.innerHTML = '';
           console.log(currentPage);
-          renderNumbers();
+          //renderNumbers();
 
-          //  addRed();
+          //console.log(renderNumbers);
+
+          addRed();
         });
       }
     }
