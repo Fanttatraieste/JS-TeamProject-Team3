@@ -1,0 +1,21 @@
+$white-background: #ffffff;
+$black-color: #000000;
+$description-color: #8c8c8c;
+$background-color: #ff6b01;
+
+:body {
+  font-family: 'Roboro', sans-serif;
+  color: $black-color;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  overflow-x: hidden;
+}
+
+.is-hidden {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0.1);
+}
