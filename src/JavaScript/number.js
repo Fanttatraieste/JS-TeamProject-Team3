@@ -20,7 +20,7 @@ module.exports = () => {
   function renderNumbers() {
     numbersDiv.innerHTML = '';
 
-    for (let i = currentPage; i <= currentPage + 5; i++) {
+    for (let i = currentPage; i <= currentPage + 5 && i < 20; i++) {
       let numberDiv = document.createElement('div');
       numberDiv.classList.add('number');
       numberDiv.innerHTML = `${i}`;
@@ -50,24 +50,36 @@ module.exports = () => {
   rightBtn.addEventListener('click', () => {
     if (currentPage < 20) {
       console.log(currentPage);
+      console.log(currentHtmlElement);
 
+      deleteRed();
       currentPage++;
-      currentHtmlElement = document.getElementById(`${currentPage}`);
+
       renderPages(currentPage);
       renderNumbers();
+      currentHtmlElement = document.getElementById(`${currentPage}`);
 
+      deleteRed();
       console.log(currentPage);
+      console.log(currentHtmlElement);
     }
   });
 
   leftBtn.addEventListener('click', () => {
     if (currentPage > 1) {
       console.log(currentPage);
+      console.log(currentHtmlElement);
+
+      deleteRed();
       currentPage--;
-      currentHtmlElement = document.getElementById(`${currentPage}`);
+
       renderPages(currentPage);
       renderNumbers();
+      currentHtmlElement = document.getElementById(`${currentPage}`);
+
+      addRed();
       console.log(currentPage);
+      console.log(currentHtmlElement);
     }
   });
 };
