@@ -7,10 +7,28 @@
   flex-direction: column;
   justify-content: space-between;
   padding: 32px;
-  background-image: url(../Image/bachHero.jpg);
   background-repeat: no-repeat;
   background-size: cover;
 }
+.background-animation {
+  background-image: url(../Image/backHero1.jpg);
+}
+@keyframes changeBackground {
+  0% {
+    background-image: url(../Image/backHero1.jpg);
+  }
+  66% {
+    background-image: url(../Image/backHero2.jpg);
+  }
+  100% {
+    background-image: url(../Image/backHero3.jpg);
+  }
+}
+
+.background-animation {
+  animation: changeBackground 60s infinite;
+}
+
 .nav-button {
   display: flex;
   align-items: center;
@@ -45,10 +63,14 @@
   width: 16px;
   height: 16px;
   fill: none;
+  stroke: currentColor;
 }
 .search-bar:focus {
   outline: none;
   border: none;
+}
+.search-bar {
+  margin-right: 0px;
 }
 .home-button,
 .library-button {
@@ -91,4 +113,8 @@
   color: #fff;
   background-color: #b92f2c;
   cursor: pointer;
+}
+
+.logo-image {
+  width: 375px;
 }
