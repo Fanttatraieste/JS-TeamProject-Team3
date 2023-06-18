@@ -20,18 +20,21 @@ module.exports = () => {
   function renderNumbers() {
     numbersDiv.innerHTML = '';
 
-    for (let i = currentPage; i <= currentPage + 5 && i < 20; i++) {
-      let numberDiv = document.createElement('div');
-      numberDiv.classList.add('number');
-      numberDiv.innerHTML = `${i}`;
-      numberDiv.setAttribute('id', `${i}`);
-      numbersDiv.appendChild(numberDiv);
+    for (let i = currentPage - 2; i <= currentPage + 2 && i < 20; i++) {
+      if (i > 1 && i < 20) {
+        let numberDiv = document.createElement('div');
+        numberDiv.classList.add('number');
+        numberDiv.innerHTML = `${i}`;
+        numberDiv.setAttribute('id', `${i}`);
+        numbersDiv.appendChild(numberDiv);
 
-      numberDiv.addEventListener('click', () => {
-        currentPage = numberDiv.id;
-        currentHtmlElement = document.getElementById(`${currentPage}`);
-        renderPages(currentPage);
-      });
+        numberDiv.addEventListener('click', () => {
+          currentPage = numberDiv.id;
+          currentHtmlElement = document.getElementById(`${currentPage}`);
+          renderPages(currentPage);
+          //renderNumbers();
+        });
+      }
     }
   }
 
