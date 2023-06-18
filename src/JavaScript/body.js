@@ -1,4 +1,5 @@
 const list = require('./trending');
+const modal = require('./modal');
 
 list(1).then(list => console.log(list));
 list(2).then(list => console.log(list));
@@ -16,8 +17,13 @@ module.exports = page => {
   function renderPage(movieList) {
     let movieContainer = document.querySelector('.movies__container');
     movieContainer.innerHTML = '';
-    movieList.forEach(e => {
-      const htmlElement = createElementProstule(e);
+    movieList.forEach(movie => {
+      const htmlElement = createElementProstule(movie);
+
+      htmlElement.addEventListener('click', event => {
+        modal(movie);
+      });
+
       movieContainer.appendChild(htmlElement);
     });
 

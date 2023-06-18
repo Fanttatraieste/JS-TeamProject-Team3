@@ -23,7 +23,7 @@
   content: ' ';
   height: 14px;
   width: 2px;
-  background-color: $black-color;
+  background-color: var(--black-color);
 }
 
 .backdrop:before {
@@ -60,7 +60,7 @@
 }
 
 #modal {
-  background-color: $white-background;
+  background-color: var(--white-background);
   margin: 20px;
   position: relative;
   padding: 48px 20px;
@@ -108,9 +108,10 @@
 #content {
   display: flex;
   flex-direction: column;
+  background-color: #fff;
   margin: 0;
   align-items: start;
-  overflow-y: scroll;
+  //overflow-y: scroll;
   width: 100%;
   gap: 30px;
 }
@@ -207,9 +208,10 @@
   grid-template-columns: 1fr 1fr;
   font-style: normal;
   line-height: 1.33;
-  color: $description-color;
+  color: var(--description-color);
   margin-bottom: 10px;
 }
+
 .right-descr-content:last-child {
   margin-bottom: 0;
 }
@@ -227,15 +229,25 @@ span {
   line-height: 1.67;
 }
 
+#img {
+  width: 100%;
+}
+
+#votesLaLaBand {
+  display: flex;
+  // justify-content: space-around;
+}
+
 #description {
   margin-bottom: 20px;
 }
 
-#votes,
+#voteRating,
+#voteCount,
 #popul,
 #origTitle,
 #genre {
-  color: $black-color;
+  color: var(--black-color);
 }
 
 .about-wrapper {
@@ -267,8 +279,8 @@ span {
   border-radius: 5px;
   line-height: 1.33;
   font-size: 12px;
-  color: $black-color;
-  border: 1px solid $black-color;
+  color: var(--black-color);
+  border: 1px solid var(--black-color);
   padding: 14px 8px;
   background-color: transparent;
   transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1),
@@ -276,8 +288,8 @@ span {
 
   &:hover,
   &:focus {
-    background-color: $background-color;
-    color: $white-background;
+    background-color: var(--background-color);
+    color: var(--white-background);
     border-color: transparent;
   }
 }

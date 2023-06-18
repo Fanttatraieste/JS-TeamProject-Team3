@@ -3,7 +3,14 @@ $black-color: #000000;
 $description-color: #8c8c8c;
 $background-color: #ff6b01;
 
-:body {
+:root {
+  --white-background: #ffffff;
+  --black-color: #000000;
+  --description-color: #8c8c8c;
+  --background-color: #ff6b01;
+}
+
+body {
   font-family: 'Roboro', sans-serif;
   color: $black-color;
   font-weight: 500;

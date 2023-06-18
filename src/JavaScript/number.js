@@ -29,10 +29,16 @@ module.exports = () => {
         numbersDiv.appendChild(numberDiv);
 
         numberDiv.addEventListener('click', () => {
+          //   deleteRed();
+
           currentPage = numberDiv.id;
           currentHtmlElement = document.getElementById(`${currentPage}`);
           renderPages(currentPage);
-          //renderNumbers();
+          //numbersDiv.innerHTML = '';
+          console.log(currentPage);
+          renderNumbers();
+
+          //  addRed();
         });
       }
     }
@@ -52,8 +58,8 @@ module.exports = () => {
 
   rightBtn.addEventListener('click', () => {
     if (currentPage < 20) {
-      console.log(currentPage);
-      console.log(currentHtmlElement);
+      // console.log(currentPage);
+      // console.log(currentHtmlElement);
 
       deleteRed();
       currentPage++;
@@ -63,15 +69,15 @@ module.exports = () => {
       currentHtmlElement = document.getElementById(`${currentPage}`);
 
       deleteRed();
-      console.log(currentPage);
-      console.log(currentHtmlElement);
+      //console.log(currentPage);
+      //console.log(currentHtmlElement);
     }
   });
 
   leftBtn.addEventListener('click', () => {
     if (currentPage > 1) {
-      console.log(currentPage);
-      console.log(currentHtmlElement);
+      // console.log(currentPage);
+      //console.log(currentHtmlElement);
 
       deleteRed();
       currentPage--;
@@ -81,8 +87,8 @@ module.exports = () => {
       currentHtmlElement = document.getElementById(`${currentPage}`);
 
       addRed();
-      console.log(currentPage);
-      console.log(currentHtmlElement);
+      //console.log(currentPage);
+      //console.log(currentHtmlElement);
     }
   });
 };
