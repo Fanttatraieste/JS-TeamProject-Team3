@@ -1,5 +1,3 @@
-const { reduceEachLeadingCommentRange } = require('typescript');
-
 module.exports = () => {
   const renderPages = require('./body');
 
