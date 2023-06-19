@@ -45,12 +45,12 @@
 .search-button {
   display: flex;
   margin-right: 8px;
-  background-color: white;
+  background-color: var(--white-background);
   align-items: center;
   justify-content: center;
   border: none;
   outline: none;
-  color: #212121;
+  color: var(--black-color);
   margin-left: 0px;
   padding: 0px 5px;
   height: 42px;
@@ -82,12 +82,12 @@
   font-size: 12px;
   line-height: 14px;
   text-transform: uppercase;
-  color: #212121;
+  color: var(--black-color);
 }
 .home-button:hover,
 .library-button:hover {
-  color: #fff;
-  background-color: #212121;
+  color: var(--white-background);
+  background-color: var(--black-color);
   cursor: pointer;
 }
 .watched-button {
@@ -105,13 +105,13 @@
   font-size: 12px;
   line-height: 14px;
   text-transform: uppercase;
-  color: #212121;
+  color: var(--black-color);
 }
 
 .watched-button:hover,
 .queue-button:hover {
-  color: #fff;
-  background-color: #b92f2c;
+  color: var(--white-background);
+  background-color: var(--button-color);
   cursor: pointer;
 }
 
