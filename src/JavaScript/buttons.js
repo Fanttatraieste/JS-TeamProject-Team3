@@ -45,8 +45,7 @@ module.exports = movie => {
       watQueObj.queue = queueList;
       queue.classList.add('added');
       queue.innerHTML = 'ADDED TO QUEUE';
-    }
-    if (queue.id === e.target.id && ok) {
+    } else if (queue.id === e.target.id && ok) {
       //watchList.push(movie);
       const index = queueList.indexOf(movie);
       if (index > -1) {
@@ -56,7 +55,7 @@ module.exports = movie => {
 
       watQueObj.queue = queueList;
       queue.classList.remove('added');
-      queue.innerHTML = 'ADD TO WATCHED';
+      queue.innerHTML = 'ADD TO QUEUE';
     }
   });
 

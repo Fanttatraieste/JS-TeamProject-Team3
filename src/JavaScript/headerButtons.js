@@ -1,21 +1,24 @@
-const watQueObj = require('./wat-que');
-const renderPage = require('./body');
-const renderList = require('./renderList');
 // const renderNumbers = require('./number');
 
 module.exports = () => {
+  const watQueObj = require('./wat-que');
+  const renderPage = require('./body');
+  const renderList = require('./renderList');
+
   const watched = document.querySelector('.watched-button');
   const queue = document.querySelector('.queue-button');
   const home = document.querySelector('.home-button');
 
   watched.addEventListener('click', e => {
     //console.log(watQueObj.watched);
-    renderList(watQueObj.watched);
+    const watchList = watQueObj.watched.map(e => e);
+    renderList(watchList);
   });
 
   queue.addEventListener('click', e => {
-    console.log(watQueObj.queue);
-    renderList(watQueObj.queue);
+    //  console.log(watQueObj.queue);
+    const queList = watQueObj.queue.map(e => e);
+    renderList(queList);
   });
 
   home.addEventListener('click', e => {
