@@ -1,4 +1,5 @@
 const modal = require('./modal');
+const buttons = require('./headerButtons');
 
 module.exports = () => {
   const search = document.querySelector('.search-bar');
@@ -8,6 +9,7 @@ module.exports = () => {
   });
 
   //console.log(movieTitle);
+  buttons();
 
   const searchBtn = document.querySelector('.search-button');
   searchBtn.addEventListener('click', e => {
@@ -20,8 +22,8 @@ module.exports = () => {
 
       movieObj = res.results[0];
 
-      console.log('------  Obiect Giulia  -----');
-      console.log(movieObj);
+      // console.log('------  Obiect Giulia  -----');
+      //  console.log(movieObj);
 
       modal(movieObj);
     })();

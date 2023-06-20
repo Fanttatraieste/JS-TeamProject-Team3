@@ -2,10 +2,10 @@ const list = require('./trending');
 const genres = require('./genre');
 const modal = require('./modal');
 
-list(1).then(list => console.log(list));
-list(2).then(list => console.log(list));
-list(3).then(list => console.log(list));
-list(4).then(list => console.log(list));
+// list(1).then(list => console.log(list));
+// list(2).then(list => console.log(list));
+// list(3).then(list => console.log(list));
+// list(4).then(list => console.log(list));
 
 module.exports = page => {
   list(page).then(list => {
@@ -32,8 +32,8 @@ module.exports = page => {
       createElementProstule(movie).then(htmlElement => {
         htmlElement.addEventListener('click', event => {
           modal(movie);
-          console.log('------   Obiect Vlad    ------');
-          console.log(movie);
+          // console.log('------   Obiect Vlad    ------');
+          // console.log(movie);
         });
 
         movieContainer.appendChild(htmlElement);
@@ -115,7 +115,7 @@ module.exports = page => {
       }
     }
     //aici voi avea in genreStrings toate genurile aferente unui film, sub forma de lista de stringuri
-    console.log(genreStrings);
+    //console.log(genreStrings);
     //eu vreau sa returnez un String care sa contina max 2 genuri + cuvantul other
     let ans = ''; //ans de la answer
     if (genreStrings.length === 1) ans = genreStrings[0];

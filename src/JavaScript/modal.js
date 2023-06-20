@@ -1,4 +1,7 @@
 const genres = require('./genre');
+const buttons = require('./buttons');
+
+const watQueObj = require('./wat-que');
 
 module.exports = async movie => {
   const modal = document.querySelector('.modal-wrapper');
@@ -62,5 +65,46 @@ module.exports = async movie => {
     let n = genreStrings.length;
     genreStrings = genreStrings.slice(0, n - 2);
     return genreStrings;
+  }
+
+  (() => {
+    const watBtn = document.querySelector('.add-to-watched-btn');
+    const queBtn = document.querySelector('.add-to-queue-btn');
+
+    //console.log(watBtn);
+
+    watBtn.id = `watch${movie.id}`;
+    queBtn.id = `queue${movie.id}`;
+
+    //am targetat butoanele, mai departe vreau sa verific daca filmul curent este sau nu adaugat in coada sau watched
+    //daca nu se afla, le las asa
+    //daca se afla deja in vreo lista, vreau sa adaug clasa added butoanelor targetate
+
+    let watList = watQueObj.watched.map(e => e);
+    let queList = watQueObj.queue.map(e => e);
+
+    if (checkMovie(watList, movie)) {
+      watBtn.classList.add('added');
+      watBtn.innerHTML = 'ADDED TO WATCHED';
+    } else {
+      watBtn.classList.remove('added');
+      watBtn.innerHTML = 'ADD TO WATCHED';
+    }
+
+    if (checkMovie(queList, movie)) {
+      queBtn.classList.add('added');
+      queBtn.innerHTML = 'ADDED TO QUEUE';
+    } else {
+      queBtn.classList.remove('added');
+      queBtn.innerHTML = 'ADD TO QUEUE';
+    }
+  })();
+
+  buttons(movie);
+
+  function checkMovie(movieList, movie) {
+    for (let i = 0; i < movieList.length; i++)
+      if (movieList[i].id === movie.id) return true;
+    return false;
   }
 };

@@ -1,0 +1,70 @@
+// Style for watch or queue
+.smallDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 320px;
+  height: 320px;
+  gap: 5px;
+  // border: 1px solid red;
+  background-color: #fff;
+  border-radius: 50%;
+  &__title {
+    margin-top: 15px;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 18px;
+    text-align: center;
+    color: #b92f2c;
+    max-width: 145px;
+  }
+  &__image {
+    width: 68.41px;
+    height: 87.01px;
+    border-radius: 5px;
+    object-fit: cover;
+    margin-bottom: 5px;
+  }
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    width: 140px;
+    // border: 1px solid green;
+    &__element {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+    }
+    &__key {
+      font-weight: 500;
+      font-size: 13px;
+      line-height: 16px;
+    }
+    &__value {
+      font-weight: 500;
+      font-size: 13px;
+      line-height: 14px;
+      color: #b92f2c;
+    }
+  }
+  &__desc {
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 20px;
+    color: #b92f2c;
+    text-align: center;
+    max-width: 80%;
+    margin-top: 15px;
+  }
+
+  &:hover {
+    background-color: #b92f2c;
+    cursor: pointer;
+    .smallDiv__title,
+    .smallDiv__list__value,
+    .smallDiv__desc {
+      color: #fff;
+    }
+  }
+}

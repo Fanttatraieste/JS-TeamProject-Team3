@@ -33,7 +33,7 @@ module.exports = () => {
           currentHtmlElement = document.getElementById(`${currentPage}`);
           renderPages(currentPage);
           //numbersDiv.innerHTML = '';
-          console.log(currentPage);
+          // console.log(currentPage);
           //renderNumbers();
 
           //console.log(renderNumbers);
@@ -44,10 +44,6 @@ module.exports = () => {
     }
   }
 
-  //   function toggleCurrentPage() {
-  //     currentHtmlElement.classList.toggle('current-page');
-  //   }
-
   function addRed() {
     currentHtmlElement.classList.add('current-page');
   }
@@ -55,6 +51,10 @@ module.exports = () => {
   function deleteRed() {
     currentHtmlElement.classList.toggle('current-page');
   }
+
+  //   function toggleCurrentPage() {
+  //     currentHtmlElement.classList.toggle('current-page');
+  //   }
 
   rightBtn.addEventListener('click', () => {
     if (currentPage < 20) {
