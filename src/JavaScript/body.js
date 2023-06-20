@@ -40,7 +40,19 @@ module.exports = page => {
 
       const text = document.createElement('div');
       const title = document.createElement('p');
-      title.innerHTML = `${e.title}`;
+      //
+      let t = '';
+      if (e.title.length <= 25) t = e.title;
+      else {
+        let elist = e.title.split('');
+        while (elist.length > 30) elist.pop();
+        elist.push('.');
+        elist.push('.');
+        elist.push('.');
+        t = elist.join('');
+      }
+      //
+      title.innerHTML = `${t}`;
       title.classList.add('movies__container__title');
       text.appendChild(title);
 
