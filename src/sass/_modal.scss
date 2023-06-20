@@ -90,8 +90,8 @@
 
 @media screen and (min-width: 768px) {
   #modal {
-    width: 618px;
-    height: 562px;
+    width: 882px;
+    height: 768px;
     margin: auto;
     padding: 42px 28px;
   }
@@ -100,7 +100,7 @@
 @media screen and (min-width: 1200px) {
   #modal {
     width: 882px;
-    height: 568px;
+    height: 768px;
     padding: 50px 30px;
   }
 }
@@ -235,7 +235,17 @@ span {
 
 #votesLaLaBand {
   display: flex;
-  // justify-content: space-around;
+  //justify-content: space-between;
+}
+
+#voteRating {
+  // margin-left: auto;
+  margin-right: 5px;
+}
+
+#voteCount {
+  margin-left: 5px;
+  //margin-right: 118px;
 }
 
 #description {
@@ -273,22 +283,21 @@ span {
 
 .add-to-watched-btn,
 .add-to-queue-btn {
-  align-items: center;
-  text-align: center;
   text-transform: uppercase;
-  border-radius: 5px;
   line-height: 1.33;
   font-size: 12px;
   color: var(--black-color);
   border: 1px solid var(--black-color);
-  padding: 14px 8px;
+  padding: 14px 32px;
+  border-radius: 100px;
   background-color: transparent;
+  cursor: pointer;
   transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1),
     color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 
   &:hover,
   &:focus {
-    background-color: var(--background-color);
+    background-color: #b92f2c;
     color: var(--white-background);
     border-color: transparent;
   }
@@ -296,14 +305,14 @@ span {
 
 .add-to-watched-btn {
   @media screen and (min-width: 480px) and (min-width: 768px) {
-    padding: 6px 13px;
-    max-width: 110px;
+    //  padding: 6px 13px;
+    // max-width: 110px;
   }
 }
 .add-to-queue-btn {
   @media screen and (min-width: 480px) and (min-width: 768px) {
-    padding: 13px 13px;
-    max-width: 110px;
+    // padding: 13px 13px;
+    // max-width: 110px;
   }
 }
 //BUTTONS
