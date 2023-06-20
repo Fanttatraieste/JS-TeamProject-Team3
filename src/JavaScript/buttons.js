@@ -16,18 +16,47 @@ module.exports = movie => {
 
   watched.addEventListener('click', e => {
     //console.log(e.target);
-    if (watched.id === e.target.id && check(watchList, movie) === false) {
+    let ok = check(watchList, movie);
+    if (watched.id === e.target.id && !ok) {
       watchList.push(movie);
-      console.log(movie);
+      // console.log(movie);
       watQueObj.watched = watchList;
+      watched.classList.add('added');
+      watched.innerHTML = 'ADDED TO WATCHED';
+    } else if (watched.id === e.target.id && ok) {
+      //watchList.push(movie);
+      const index = watchList.indexOf(movie);
+      if (index > -1) {
+        //mereu ar trb sa fie mai mare
+        watchList.splice(index, 1);
+      }
+
+      watQueObj.watched = watchList;
+      watched.classList.remove('added');
+      watched.innerHTML = 'ADD TO WATCHED';
     }
   });
 
   queue.addEventListener('click', e => {
     // console.log(e.target);
-    if (queue.id === e.target.id && check(queueList, movie) === false) {
+    let ok = check(queueList, movie);
+    if (queue.id === e.target.id && !ok) {
       queueList.push(movie);
       watQueObj.queue = queueList;
+      queue.classList.add('added');
+      queue.innerHTML = 'ADDED TO QUEUE';
+    }
+    if (queue.id === e.target.id && ok) {
+      //watchList.push(movie);
+      const index = queueList.indexOf(movie);
+      if (index > -1) {
+        //mereu ar trb sa fie mai mare
+        queueList.splice(index, 1);
+      }
+
+      watQueObj.queue = queueList;
+      queue.classList.remove('added');
+      queue.innerHTML = 'ADD TO WATCHED';
     }
   });
 
