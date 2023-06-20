@@ -1,4 +1,5 @@
 const list = require('./trending');
+const genres = require('./genre');
 const modal = require('./modal');
 
 list(1).then(list => console.log(list));
@@ -18,18 +19,28 @@ module.exports = page => {
     let movieContainer = document.querySelector('.movies__container');
     movieContainer.innerHTML = '';
     movieList.forEach(movie => {
-      const htmlElement = createElementProstule(movie);
+      // const htmlElement = createElementProstule(movie);
 
-      htmlElement.addEventListener('click', event => {
-        modal(movie);
-        console.log('------   Obiect Vlad    ------');
-        console.log(movie);
+      // htmlElement.addEventListener('click', event => {
+      //   modal(movie);
+      //   console.log('------   Obiect Vlad    ------');
+      //   console.log(movie);
+      // });
+
+      // movieContainer.appendChild(htmlElement);
+
+      createElementProstule(movie).then(htmlElement => {
+        htmlElement.addEventListener('click', event => {
+          modal(movie);
+          console.log('------   Obiect Vlad    ------');
+          console.log(movie);
+        });
+
+        movieContainer.appendChild(htmlElement);
       });
-
-      movieContainer.appendChild(htmlElement);
     });
 
-    function createElementProstule(e) {
+    async function createElementProstule(e) {
       const elDiv = document.createElement('div');
       elDiv.classList.add('movies__container__item');
 
@@ -57,17 +68,23 @@ module.exports = page => {
       text.appendChild(title);
 
       //const genreList = e.genres.map(e => e.name);
-      let genres = '';
+      let gen = '';
       // if (genreList.length == 1) genres += genreList[0];
       // else if (genreList.length == 2)
       //   genres += genreList[0] + ' ' + genreList[1];
       // else genres += genreList[0] + ' ' + genreList[1] + ' ' + 'other';
 
-      genres += ' | ';
+      //
+      let genreList = await genres(); //am o lista de obiecte, unde fiecare obiect are id si nume
+      let genreIds = e.genre_ids; //aici am o lista de Id-uri
+      gen += createGenreString(genreList, genreIds);
+      //
+
+      gen += ' | ';
       const year = e.release_date.slice(0, 4);
-      genres += `${year}`;
+      gen += `${year}`;
       const subtitle = document.createElement('p');
-      subtitle.innerHTML = genres;
+      subtitle.innerHTML = gen;
       subtitle.classList.add('movies__container__genre');
       text.appendChild(subtitle);
 
@@ -77,5 +94,35 @@ module.exports = page => {
 
       return elDiv;
     }
+  }
+  function createGenreString(genreList, genreIds) {
+    // o sa imi fac o lista de stringuri facand match din genre id cu genre list
+
+    // console.log('----------------');
+    // console.log(genreList);
+    // console.log(genreIds);
+    // console.log('----------------');
+
+    let genreStrings = [];
+    let ok = false;
+    for (let i = 0; i < genreIds.length; i++) {
+      ok = false;
+      for (let j = 0; j < genreList.length && ok === false; j++) {
+        if (genreIds[i] === genreList[j].id) {
+          genreStrings.push(genreList[j].name);
+          ok = true;
+        }
+      }
+    }
+    //aici voi avea in genreStrings toate genurile aferente unui film, sub forma de lista de stringuri
+    console.log(genreStrings);
+    //eu vreau sa returnez un String care sa contina max 2 genuri + cuvantul other
+    let ans = ''; //ans de la answer
+    if (genreStrings.length === 1) ans = genreStrings[0];
+    else if (genreStrings.length === 2)
+      ans = genreStrings[0] + ', ' + genreStrings[1];
+    else ans = genreStrings[0] + ', ' + genreStrings[1] + ', ' + 'other';
+
+    return ans;
   }
 };
