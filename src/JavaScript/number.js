@@ -91,4 +91,27 @@ module.exports = () => {
       //console.log(currentHtmlElement);
     }
   });
+
+  const first = document.getElementById('1');
+  const last = document.getElementById('20');
+
+  first.addEventListener('click', () => {
+    deleteRed();
+    currentPage = 1;
+    renderPages(currentPage);
+    renderNumbers();
+    currentHtmlElement = document.getElementById(`${currentPage}`);
+
+    addRed();
+  });
+
+  last.addEventListener('click', () => {
+    deleteRed();
+    currentPage = 20;
+    renderPages(currentPage);
+    renderNumbers();
+    currentHtmlElement = document.getElementById(`${currentPage}`);
+
+    addRed();
+  });
 };
