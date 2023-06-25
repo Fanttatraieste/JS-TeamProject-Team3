@@ -1,0 +1,28 @@
+body {
+  background-color: #f5f5f5;
+  color: #333;
+  transition: background-color 0.5s, color 0.5s;
+}
+
+body.night {
+  background-color: #333;
+  color: #f5f5f5;
+}
+
+body.fade-in {
+  opacity: 0;
+}
+
+body.fade-out {
+  opacity: 1;
+}
+
+.toggle {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
