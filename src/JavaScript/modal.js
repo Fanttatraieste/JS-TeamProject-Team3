@@ -17,12 +17,12 @@ module.exports = async movie => {
     modal.classList.toggle('is-hidden');
   }
 
-  const voteRating = document.getElementById('voteRating');
   const voteCount = document.getElementById('voteCount');
   const popul = document.getElementById('popul');
   const origTitle = document.getElementById('origTitle');
   const about = document.getElementById('about');
   const image = document.getElementById('img');
+  const voteRating = document.getElementById('voteRating');
   const filmTitle = document.getElementById('film-title');
 
   //
